@@ -1,5 +1,6 @@
 //These are all of the numbers
-var mod = [147308
+var mod = [
+    147308
     , 51605
     , 71317
     , 110882
@@ -101,11 +102,12 @@ var mod = [147308
     , 139131];
 //This is a global variable I can use to keep track of all of the numbers and add them together
 var sum = 0;
-// These are two for loops I have there is a better way to do this but I can't think of it and this works. The first for loop goes through all of the numbers and changes them to the right values, the nested for loop goes through the correct values and adds them to my global variable  
+// These are two loops I have there is a better way to do this but I can't think of it and this works. The first for loop goes through all of the numbers and changes them to the right values, the nested while loop goes through the correct values and adds them to my global variable add then changes the number again and keeps adding the changed number until the number is below zero that it is supposed to add  
 for (i = 0; i < mod.length; i++) {
-    var real = [(Math.floor(mod[i] / 3) - 2)];
-    for (z = 0; z < real.length; z++) {
-        sum += real[z];
+    var real = (Math.floor(mod[i] / 3) - 2);
+    while (real > 0) {
+        sum += real;
+        real = (Math.floor(real / 3) - 2)
     }
 }
 //This is how I see the number
